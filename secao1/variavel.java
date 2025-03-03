@@ -198,49 +198,30 @@ public class variavel {
         System.out.println(codigoAscii);
 
 
-        // Exercicio 1
+        // 12 - Constantes
+        final int DIAS_DA_SEMANA = 7;
 
-        int valor10 = 10;
+        System.out.println("Dias da semana: " + DIAS_DA_SEMANA);
 
-        int valorDobro = valor10 * 2;
+        // 13 - Var
 
-        System.out.println(valorDobro);
+        var z = 10;
 
+        System.out.println(z);
 
-        // Exercicio 2
-
-        char B = 'B';
-
-        int codigoAscii2 = (int) B;
-
-        System.out.println(codigoAscii2);
-
-
-        // Exercicio 3
-
-        double numeroDouble2 = 15.75;
-
-        double numeroDouble3 = 20.40;
-
-        double numeroDoubleResult = numeroDouble2 + numeroDouble3;
-
-        System.out.println(numeroDoubleResult);
-
-        // Exercicio 4 
-
-        long numGrande = 2_000_000_000L;
-
-        int numGrandeInt = (int) numGrande;
-
-        System.out.println(numGrandeInt);
-    
-        // Exercicio 5
-
-        String helloWorld = "Olá Mundo!";
-
-        String helloJava = helloWorld + " Bem-vindo ao Java!";
+        //z = 'teste';
         
-        System.out.println(helloJava);
+        z = 5;
+
+        var texto = "teste";
+
+        var doubleTeste = 2.00;
+
+        System.out.println(texto);
+
+        System.out.println(doubleTeste);
+
+        
 
     }
 }
