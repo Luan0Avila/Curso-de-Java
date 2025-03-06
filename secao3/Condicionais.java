@@ -117,6 +117,10 @@ public class Condicionais {
     } else if (num == 5); {
     System.out.println("Outra coisa");
     }
+
+    // 8 - AND
+
+    
     }
 
 }
