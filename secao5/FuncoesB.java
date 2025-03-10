@@ -1,6 +1,8 @@
 package secao5;
 
 public class FuncoesB {
+
+    static int globalVar = 11;
     public static void main(String[] args) {
         
         // 5 - funçoes com condicionais
@@ -18,9 +20,28 @@ public class FuncoesB {
 
         System.out.println("oi");
     
-    // 8 - Documentação função
-    System.out.println(calcularMedia(5, 6, 7));
+        // 8 - Documentação função
+        System.out.println(calcularMedia(5, 6, 7));
+
+        // 9 - Escopo
+
+        //escopo local
+        int localVar = 10;
+
+        if (true) {
+            System.out.println(localVar);
+        }
+
+        System.out.println(globalVar);
+
+        int testeFuncaoEscopo = escopoLocal(localVar);
     
+        System.out.println(testeFuncaoEscopo);
+
+        // { } => geralmente delimitam um escopo, cria um escopo
+
+        
+
     
     }
 
@@ -74,7 +95,23 @@ public class FuncoesB {
         System.out.println("Autenticação bem sucedida");
     }
 
+    /**
+     * 
+     * Calcula a média de tres numeros inteiros
+     * @param n1 O primeiro numero a ser enviado
+     * @param n2 O segundo numero a ser enviado
+     * @return n3 O terceiro numero a ser enviado
+     */
     public static double calcularMedia(int n1, int n2, int n3) {
         return (n1 + n2 + n3) / 3;
+    }
+
+    public static int escopoLocal(int a) {
+        System.out.println(globalVar);
+        System.out.println(a);
+    
+        int testeFuncao = 1;
+
+        return testeFuncao;
     }
 }
