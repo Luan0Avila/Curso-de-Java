@@ -43,10 +43,74 @@ public class Loops {
 
             System.out.println("Valor aleatório: " + valor);
         }
+        
+        // 3 - loop infinito
+        //while (true) {
+            //System.out.println("Infinito");
+        //}
     
-    // 3 - loop infinito
-    while (true) {
-        System.out.println("Infinito");
-    }
+        // 4 - Do while
+
+        int j = 10;
+
+        do {
+
+            System.out.println("j = " + j);
+
+            j --;
+        } while(j > 0);
+
+        int numero = 0;
+
+        do {
+            numero = (int)(Math.random() * 10);
+
+            System.out.println("aleatório: " + numero);
+        } while(numero != 1); 
+    
+        // 5 - Break em loops
+        
+        //break pode ser usado em qualquer loop
+
+        for(int x=0; x <= 10; x++) {
+            System.out.println("x = " + x);
+
+            if (x == 5) {
+                System.out.println("parando");
+                break;
+            }
+        }
+
+        // 6 - Continue
+
+        for(int x = 10; x>0; x--) {
+            
+            if (x % 2 == 0) {
+                System.out.println("par!");
+                continue;
+            }
+            // quando ele pula isso não é executado
+            System.out.println("contatodor = " + x);
+        }
+
+        // 7 - Nested loops
+
+        for(int m = 1; m<= 3; m++) {
+            System.out.println("externo");
+            for(int n = 1; n <= 3; n++){
+
+                System.out.println(m + " x " + n + " = " +(m*n));
+            }
+        }
+
+        //Padrão de estrelas
+        for(int o = 1; o <= 5; o++) {
+
+            for(int p = 1; p <= 0; p++) {
+                System.out.print("8");
+            }
+            System.out.println("*");
+        }
+
     }
 }
