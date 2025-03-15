@@ -34,6 +34,15 @@ public class LoopsB {
         
         // 9 - Off by one
         
+
+        // [1, 2, 3, 4]
+        
+        // 4 vezes
+
+        // 5 -> acessa um elemento invalido
+
+        //associar o loop a qtd de elementos
+
         // Executar 5 vezes
         for(int i = 0; i < 5; i++) {
             System.out.println(i);
