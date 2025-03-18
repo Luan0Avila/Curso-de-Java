@@ -1,5 +1,8 @@
 package secao9;
 
+import java.util.Arrays;
+import java.util.ArrayList;
+
 public class Listas {
     public static void main(String[] args) {
         
@@ -91,9 +94,148 @@ public class Listas {
         for (char letra : letras) {
 
             if (letra == letraProcurada) {
-                System.out.println("Letra procurada está na lista " + letra);
+                System.out.println("Letra procurada está na lista: " + letra);
             }
         }
     
+        // 4 - Loops com if
+
+        //filtrar e somar numeros pares
+        int somaPares = 0;
+
+        for(int numero : numeros) {
+
+            if (numero % 2 == 0) {
+                somaPares += numero;
+            }
+        }
+
+        System.out.println("soma pare: " + somaPares);
+
+        //exibir valores maiores que um determinado valor
+        int[] nums = {12, 6, 18, 24, 48, 5};
+
+        int limite = 10;
+
+        for(int i = 0; i < nums.length; i++) {
+
+            if (nums[i] > limite) {
+                System.out.println("Numero maior encontrado: " + nums[i]);
+            }
+        }
+    
+    String[] linguagens = {"java", "C", "Python", "PHP"};
+
+    String linguagemAlvo = "Python";
+
+    for(String linguagem : linguagens) {
+
+        if (linguagemAlvo == linguagem) {
+            System.out.println("Linguagem encontrada! Parando o loop");
+            break;
+        } else {
+            System.out.println("Linguagem ainda não encontrada");
+        }
+    }
+    
+
+    // 5 - Atualizar valores
+    for(int i = 0; i < numeros.length; i++) {
+
+        numeros[i] *= 2;
+
+    }
+
+    System.out.println(numeros[1]);
+
+    for(int numero : numeros ) {
+        System.out.println("Numeros dobrados: " + numero);
+    }
+
+        numeros[5] = 1;
+
+        System.out.println(numeros[5]);
+
+        for(int i = 0; i < frutas.length; i++) {
+
+            if (frutas[i].equals("Maçã")) {
+                
+                frutas[i] = "Abacate";
+            }
+        }
+
+        System.out.println(frutas[0]);
+
+        //não se pode fazer atribuição com o foreach
+
+        // 6 - ToString
+
+        //Classes no java, que vão ter metodos utilitarios, o arrray é uma delas
+        String dadosNumericos = Arrays.toString(numeros);
+
+        System.out.println(dadosNumericos);
+        System.out.println(numeros);
+
+        String dadosFrutas = Arrays.toString(frutas);
+        System.out.println(dadosFrutas);
+
+        int[] teste = new int[3];
+
+        System.out.println(Arrays.toString(teste));
+
+        // 7 - Adicionando novos itens a arrays
+
+        // ex1: criando um novo array maior e copiando os elementos
+
+        int[] novoArray = new int[numeros.length + 1];
+
+        for(int i = 0; i < numeros.length; i++) {
+            novoArray[i] = numeros[i];
+        }
+
+        System.out.println(Arrays.toString(novoArray));
+
+        novoArray[novoArray.length - 1] = 4;
+
+        System.out.println(Arrays.toString(novoArray));
+
+        //ex2: utilizando arraycopy para copiar os elementos
+
+        String[] novoFrutas = new String[frutas.length + 1];
+
+        System.arraycopy(frutas, 0, novoFrutas, 0, frutas.length);
+
+        novoFrutas[novoFrutas.length - 1] = "Jaca";
+
+        System.out.println(Arrays.toString(novoFrutas));
+
+        // ex3: usando ArrayList
+        ArrayList<String> listaFrutas = new ArrayList<>(Arrays.asList("Maçã", "Banana",
+        "Laranja"));
+
+        System.out.println(listaFrutas);
+
+        listaFrutas.add("Manga");
+
+        System.out.println(listaFrutas);
+
+        // 8 - Reference trap
+        int[] arrayOriginal = {1,2,3};
+
+        //programou muita coisa...
+        int[] arrayCopia = arrayOriginal;
+
+        arrayCopia[0] = 10;
+
+        System.out.println(Arrays.toString(arrayOriginal));
+        System.out.println(Arrays.toString(arrayCopia));
+
+        //como evitar?
+        int[] arrayClone = arrayOriginal.clone();
+
+        arrayClone[0] = 999;
+
+        System.out.println(Arrays.toString(arrayOriginal));
+        System.out.println(Arrays.toString(arrayClone));
     }
 }
