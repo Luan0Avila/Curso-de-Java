@@ -1,5 +1,6 @@
 package secao9;
 import java.util.Arrays;
+import java.util.ArrayList;
 
 public class Exercicios {
     public static void main(String[] args) {
@@ -38,6 +39,58 @@ public class Exercicios {
         }
         System.out.println("O numero mais frequente é " + maisFrequente);
 
+
+        // Exercicio 3
+        int[][] matriz = {
+            {1,2,3},
+            {4,5,6}
+        };
+
+        int[][] matrizTransposta = new int[matriz[0].length][matriz.length];
+
+        for(int[] linha : matrizTransposta) {
+            System.out.println(Arrays.toString(linha));
         }
+        
+        for(int i = 0; i < matriz.length; i++) {
+            for(int j = 0; j < matriz[0].length; j++) {
+                matrizTransposta[j][i] = matriz[i][j];
+            }
+        }
+        for(int[] linha : matrizTransposta) {
+            System.out.println(Arrays.toString(linha));
+        }
+
+
+        // Exercicio 4
+        int[] inteiros = {-1,2,3,4,-5,6,7,8,9};
+
+        System.out.println(Arrays.toString(inteiros));
+
+        for(int i = 0; i <inteiros.length; i++) {
+
+            if (inteiros[i] < 0) {
+                inteiros[i] = 0;
+            }
+        }
+        System.out.println(Arrays.toString(inteiros));
+
+        // Exercicio 5 
+        int[] duplicados = {1,1,2,2,3,3};
+
+        ArrayList<Integer> naoDuplicados = new ArrayList<>(); 
+
+        for(int numero : duplicados) {
+
+            if (!naoDuplicados.contains(numero)) {
+                naoDuplicados.add(numero);
+            }
+        }
+
+        System.out.println(Arrays.toString(duplicados));
+        System.out.println(naoDuplicados);
+
+
+    }
 }
 
