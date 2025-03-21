@@ -40,6 +40,63 @@ public class ListasB {
         System.out.println(Arrays.toString(linha));
     }
 
+    //Imprimir matriz sem foreach
     System.out.println(Arrays.deepToString(matriz));
+
+    // 2 - Manipulação de Arrays avançado
+
+    //copia
+    int[] original = {1,2,3,3};
+
+    int[] copia = Arrays.copyOf(original, 2);
+
+    System.out.println(Arrays.toString(copia));
+
+    //fill - preenchimento
+    int[] numeros = new int[5];
+
+    System.out.println(Arrays.toString(numeros));
+    
+    Arrays.fill(numeros, 5);
+    System.out.println(Arrays.toString(numeros));
+
+    //Transformação de arrays para stream
+    int[] values = {1,2,3,4,5};
+
+    //fazer soma de todos os elementos
+    int sum = Arrays.stream(values).sum();
+
+    System.out.println(sum);
+
+    // 3 - Arrays Dinamicos
+    ArrayList<String> frutas = new ArrayList<>();
+
+    System.out.println(frutas);
+
+    frutas.add("Maçã");
+
+    frutas.add("Banana");
+
+    System.out.println(frutas);
+
+    for(String fruta : frutas) {
+        System.out.println(fruta);
+    }
+
+    frutas.remove("Banana");
+
+    System.out.println(frutas);
+
+    frutas.remove(0);
+
+    System.out.println(frutas);
+
+    frutas.add("Maçã");
+
+    String frutaEspecifica = frutas.get(0);
+
+    System.out.println(frutaEspecifica);
+
+    //Não funciona com indice diretamente
     }
 }
