@@ -75,5 +75,14 @@ public class POO {
         System.out.println(camisa.getProdutoInfo());
 
         camisa.aplicarDesconto(10);
+
+        // 9 - Construtores
+        Livro livro = new Livro("Harry Potter", "JK Rowlling", 16.99);
+
+        livro.exibirInfo();
+
+        Livro livro2 = new Livro();
+
+        livro2.exibirInfo();
     }    
 }
