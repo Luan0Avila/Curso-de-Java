@@ -12,5 +12,19 @@ public class Exercicios {
         iphone.ligar();
         iphone.desligar();
         iphone.usar(10);
+
+
+        // Exercicio 2
+        Aluno luan = new Aluno("Luan",11, 75.0);
+
+        System.out.println(luan.getNome());
+
+        System.out.println(luan.getNotaFinal());
+
+        luan.setNome(("Luan Avila"));
+
+        luan.setNotaFinal(80);
+
+        luan.exibirInfo();
     }
 }
