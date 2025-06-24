@@ -26,5 +26,12 @@ public class Exercicios {
         luan.setNotaFinal(80);
 
         luan.exibirInfo();
+    
+        // Exercicio 3
+        ProdutoEletronico pc = new ProdutoEletronico("Computador", 7000.00,12);
+
+        pc.aplicarDesconto(50);
+
+        pc.exibirInfo();
     }
 }
