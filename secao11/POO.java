@@ -84,5 +84,23 @@ public class POO {
         Livro livro2 = new Livro();
 
         livro2.exibirInfo();
+
+
+        // 10 - Niveis de acesso
+        Funcionário funcionário1 = new Funcionário("Luan",2500,"teste123@");
+
+        funcionário1.exibirDados();
+
+        funcionário1.nome = "Teste";
+        funcionário1.salario = 1500;
+        //funcionário1.senha = "teste321"; senha é private
+
+        funcionário1.exibirDados();
+
+        funcionário1.aumentarSalario(10);
+
+        //System.out.println(funcionário1.tentarSenha());
+        System.out.println(funcionário1.autenticar("teste123@"));
+        System.out.println(funcionário1.autenticar("teste12"));
     }    
 }
