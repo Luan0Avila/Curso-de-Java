@@ -33,6 +33,7 @@ public class ProdutoEletronico {
 
     public void exibirInfo() {
         System.out.println("O produto: " + nome + ", está com o preço de: " + preco + "R$, e garintia de: " + garantia + " meses"); 
+
     }
 
     

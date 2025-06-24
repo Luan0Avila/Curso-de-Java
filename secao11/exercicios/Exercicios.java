@@ -33,5 +33,18 @@ public class Exercicios {
         pc.aplicarDesconto(50);
 
         pc.exibirInfo();
+
+        // Exercicio 4
+        LivroBiblioteca livro1 = new LivroBiblioteca();
+
+        livro1.setTitulo("Re:Zero");
+        livro1.setAutor("Tappei Nagatsuki");
+
+        livro1.devolver();
+
+        livro1.pegarEmprestado();
+        livro1.pegarEmprestado();
+
+        livro1.devolver();
     }
 }

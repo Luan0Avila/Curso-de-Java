@@ -17,11 +17,7 @@ public class Aluno {
     }
 
     public void setNome(String nome) {
-        if (nome != null && !nome.isEmpty()) {
-            this.nome = nome;
-        } else {
-            System.out.println("Nome inválido.");
-        }
+
     }
 
     public double getNotaFinal() {
