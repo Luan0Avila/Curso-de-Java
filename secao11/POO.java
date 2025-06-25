@@ -1,5 +1,7 @@
 package secao11;
 
+import java.util.Arrays;
+
 public class POO {
     public static void main(String[] args) {
     
@@ -110,5 +112,18 @@ public class POO {
         System.out.println(joaquim.getIdade());
 
         //joaquim.nome = "teste";
+    
+        // 12 - encapsulamento de arrays
+        String[] meusAlunos = {"Luan","Luna","Lady"};
+
+        Turma novTurma = new Turma(meusAlunos);
+
+        System.out.println(Arrays.toString(novTurma.getAlunos()));
+
+        String[] outrosAlunos = {"Alunos 1", "Aluno 2"};
+
+        novTurma.setAlunos(outrosAlunos);
+    
+        System.out.println(Arrays.toString(novTurma.getAlunos()));
     }    
 }
