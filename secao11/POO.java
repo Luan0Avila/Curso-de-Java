@@ -102,5 +102,13 @@ public class POO {
         //System.out.println(funcionário1.tentarSenha());
         System.out.println(funcionário1.autenticar("teste123@"));
         System.out.println(funcionário1.autenticar("teste12"));
+    
+        // 11 - Classe imutavel
+        PessoaImutavel joaquim = new PessoaImutavel("Joaquim", 23);
+
+        System.out.println(joaquim.getNome());
+        System.out.println(joaquim.getIdade());
+
+        //joaquim.nome = "teste";
     }    
 }
