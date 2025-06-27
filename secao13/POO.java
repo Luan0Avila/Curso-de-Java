@@ -11,6 +11,7 @@ public class POO {
 
         carro1.exibirInfo();
 
+        // 2 - Herança
         Cachorro cao1 = new Cachorro("Poca");
 
         cao1.latir();
