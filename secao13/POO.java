@@ -23,5 +23,20 @@ public class POO {
 
         // a subclasse tem acesso a tudo da superclasse
         // mas o contrário não é verdade 
+
+        // 3 - Classe Object
+        Pessoa luan = new Pessoa("Luan",20);
+        Pessoa luna = new Pessoa("Luna",0);
+
+        System.out.println(luan.toString());
+        System.out.println(luan.equals(luna));
+
+        // 4 - Overrride
+        Quadrado q1 = new Quadrado(4);
+
+        Circulo c1 = new Circulo(3.2);
+
+        System.out.println(q1.calcularArea());
+        System.out.println(c1.calcularArea());
     }
 }
