@@ -50,5 +50,15 @@ public class POO {
 
         System.out.println(funcionario.calcularBonus());
         System.out.println(gerente.calcularBonus());
+
+        // 6 - abstract
+        Instrumento violao = new Violao("violão");
+        Instrumento bateria = new Bateria("bateria");
+
+        violao.exibirDetalhes();
+        bateria.exibirDetalhes();
+
+        violao.tocar();
+        bateria.tocar();
     }
 }
