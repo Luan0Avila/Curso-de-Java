@@ -38,5 +38,17 @@ public class POO {
 
         System.out.println(q1.calcularArea());
         System.out.println(c1.calcularArea());
+
+        // 5 - super
+        Funcionario funcionario = new Funcionario("Carlos",3000);
+
+        Gerente gerente = new Gerente("Marcos",5000,1000);
+
+
+        gerente.exibirDetalhes();
+        funcionario.exibirDetalhes();
+
+        System.out.println(funcionario.calcularBonus());
+        System.out.println(gerente.calcularBonus());
     }
 }
