@@ -71,11 +71,16 @@ public class POO {
             transf.processarPagamento(100);
             transf.exibirRecibo(100);
 
-            // 8 - multi interfaces
-            Documento doc = new Documento("txt");
+        // 8 - multi interfaces
+        Documento doc = new Documento("txt");
 
-            doc.salvar();
-            doc.imprimir();
+        doc.salvar();
+        doc.imprimir();
     
+            // 9 - default methods nos interfaces
+            CalculadoraAvançada calc = new CalculadoraAvançada();
+
+            System.out.println(calc.somar(2,5));
+            System.out.println(calc.multi(2,5));
     }
 }
