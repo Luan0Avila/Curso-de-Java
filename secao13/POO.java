@@ -70,6 +70,12 @@ public class POO {
 
             transf.processarPagamento(100);
             transf.exibirRecibo(100);
+
+            // 8 - multi interfaces
+            Documento doc = new Documento("txt");
+
+            doc.salvar();
+            doc.imprimir();
     
     }
 }
