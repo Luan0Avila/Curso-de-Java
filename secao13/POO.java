@@ -82,5 +82,13 @@ public class POO {
 
             System.out.println(calc.somar(2,5));
             System.out.println(calc.multi(2,5));
+
+            // 10 - Polimorfismo
+
+            // classes abstratas ou interfaces -> sobreescrever os métodos destas superClasses
+            Instrumento violino = new Violino("violino");
+
+            violino.exibirDetalhes();
+            violino.tocar();
     }
 }
