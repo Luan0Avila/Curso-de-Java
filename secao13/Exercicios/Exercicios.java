@@ -16,5 +16,11 @@ public class Exercicios {
 
         moto.acelerar();
         carro.acelerar();
+
+        // exercicio 3 
+        Cacchorro cacchorro = new Cacchorro("bob", "latido","salcicha");
+
+        cacchorro.emitirSom();
+        cacchorro.detalhes();
     }
 }
