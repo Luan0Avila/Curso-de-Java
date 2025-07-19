@@ -10,5 +10,11 @@ public class Exercicios {
 
         pessoa1.exibirInfo();
     
+        // exercicio 2
+        Carro carro = new Carro();
+        Moto moto = new Moto();
+
+        moto.acelerar();
+        carro.acelerar();
     }
 }
