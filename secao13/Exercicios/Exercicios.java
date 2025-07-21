@@ -22,5 +22,16 @@ public class Exercicios {
 
         cacchorro.emitirSom();
         cacchorro.detalhes();
+
+        // exercicio 4
+        FuncionarioIntegral fIntegral = new FuncionarioIntegral("joquinha", 3000.00);
+
+        System.out.println(fIntegral.calcularSalario());
+        fIntegral.adicionarBeneficio("Agua");
+
+        FuncionarioMeioPeriodo fMeioPeriodo = new FuncionarioMeioPeriodo("juliao",10,7);
+
+        System.out.println(fMeioPeriodo.calcularSalario());
+        fMeioPeriodo.adicionarBeneficio("salario todo dia 5");
     }
 }
