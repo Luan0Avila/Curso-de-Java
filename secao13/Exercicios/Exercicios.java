@@ -33,5 +33,30 @@ public class Exercicios {
 
         System.out.println(fMeioPeriodo.calcularSalario());
         fMeioPeriodo.adicionarBeneficio("salario todo dia 5");
+
+        // exercicio 5
+        Pilotavel hidroaviao = new Hidroaviao();
+        Navegavel barco = new Barco();
+        Pilotavel aviao = new Aviao();
+
+        aviao.pilotar();
+        barco.navegar();
+        hidroaviao.pilotar();
+
+        operarVeiculo(aviao);
+        operarVeiculo(barco);
+        operarVeiculo(hidroaviao);
+
+    }
+
+    public static void operarVeiculo(Object veiculo){
+
+        if (veiculo instanceof Pilotavel) {
+            System.out.println("Este veiculo é pilotavel");
+        }
+
+        if (veiculo instanceof Navegavel) {
+            System.out.println("Este veiculo é navegavel");
+        }
     }
 }
