@@ -26,6 +26,7 @@ public class Erros {
             
             System.out.println("Msg:" + e.getMessage());
         }
+        // Excessão e erro => para o mesmo fim
 
     }
 }
