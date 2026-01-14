@@ -11,6 +11,6 @@ public class Pessoa {
     }
 
     public void dizerOla() {
-        System.out.println("Olá " + nome);
+        System.out.println("Olá " + nome + " " + idade);
     }
 }
