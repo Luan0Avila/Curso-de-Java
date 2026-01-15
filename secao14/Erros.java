@@ -1,6 +1,7 @@
 package secao14;
 
 public class Erros {
+
     public static void main(String[] args) {
         
         // 1 - try catch
@@ -69,5 +70,23 @@ public class Erros {
         } finally {
             System.out.println("Executou o finally");
         }
+
+        // 3 - exceções com throw
+        try {
+            validarIdade(10);
+        } catch (Exception e) {
+            System.out.println("Erro: " + e.getMessage());
+        }
+        
+    
+    }
+
+    public static void validarIdade(int idade) {
+
+        if (idade < 18) {
+            throw new IllegalArgumentException("Idade deve ser maior que 18.");
+            
+        }
+        System.out.println("Idade válida " + idade);
     }
 }
