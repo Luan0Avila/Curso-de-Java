@@ -88,5 +88,15 @@ public class Erros {
             
         }
         System.out.println("Idade válida " + idade);
+    
+    // 4 - Excessões personalizadas
+    Banco minhaConta = new Banco(1000);
+
+    try {
+        minhaConta.sacar(2000);
+    } catch (SaldoInsuficienteException e) {
+        System.out.println(e.getMessage());
+    }
+    
     }
 }
