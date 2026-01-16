@@ -3,12 +3,10 @@ package secao11;
 public class Aluno {
     
     private String nome;
-    private int matricula;
     private double notaFinal;
 
-    public void Aluno(String nome, int matricula, double notaFinal) {
+    public void Aluno(String nome, double notaFinal) {
         this.nome = nome;
-        this.matricula = matricula;
         this.notaFinal = notaFinal;
     }
 

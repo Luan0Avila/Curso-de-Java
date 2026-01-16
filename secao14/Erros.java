@@ -1,5 +1,6 @@
 package secao14;
 
+    import java.io.*;
 public class Erros {
 
     public static void main(String[] args) {
@@ -89,14 +90,32 @@ public class Erros {
         }
         System.out.println("Idade válida " + idade);
     
-    // 4 - Excessões personalizadas
-    Banco minhaConta = new Banco(1000);
+        // 4 - Excessões personalizadas
+        Banco minhaConta = new Banco(1000);
 
-    try {
-        minhaConta.sacar(2000);
-    } catch (SaldoInsuficienteException e) {
-        System.out.println(e.getMessage());
-    }
-    
+        try {
+            minhaConta.sacar(2000);
+        } catch (SaldoInsuficienteException e) {
+            System.out.println(e.getMessage());
+        }
+        
+        //  - verificadas e não verificadas
+
+
+        // verificadas
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("arquivo.txt"));
+            String linha = reader.readLine();
+            System.out.println(linha);
+        } catch (Exception e) {
+            System.out.println("Erro ao ler arquivo: " + e.getMessage());
+        }
+
+        // não verificadas
+        String texto = null;
+
+        //System.out.println(texto.length());
+
     }
 }
