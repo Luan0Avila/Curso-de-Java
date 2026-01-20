@@ -74,7 +74,7 @@ public class Erros {
 
         // 3 - exceções com throw
         try {
-            validarIdade(10);
+            validarIdade(21);
         } catch (Exception e) {
             System.out.println("Erro: " + e.getMessage());
         }
@@ -108,14 +108,41 @@ public class Erros {
             BufferedReader reader = new BufferedReader(new FileReader("arquivo.txt"));
             String linha = reader.readLine();
             System.out.println(linha);
+            reader.close();
         } catch (Exception e) {
             System.out.println("Erro ao ler arquivo: " + e.getMessage());
         }
 
         // não verificadas
-        String texto = null;
+        //String texto = null;
 
         //System.out.println(texto.length());
 
+
+        // 5 - trhows em métodos
+
+        try {
+            processarArquivos("teste");
+        } catch (FileNotFoundException e) {
+            System.out.println("Erro: " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Erro: " + e.getMessage());
+        }
+        
+    }
+
+    public static void processarArquivos(String caminho) throws FileNotFoundException, IOException {
+
+        if (caminho == null || caminho.isEmpty()) {
+            throw new IOException("Caminho não encontrado");
+        }
+
+        File arquivo = new File(caminho);
+
+        if (!arquivo.exists()) {
+            throw new FileNotFoundException("Arquivo não encontrado");
+        }
+
+        System.out.println("arquivo encontrado com sucesso");
     }
 }
