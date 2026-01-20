@@ -129,6 +129,35 @@ public class Erros {
             System.out.println("Erro: " + e.getMessage());
         }
         
+
+        // 6 - Encadeamento de exceções
+
+        try {
+            abrirArquivo(null);
+        } catch (Exception e) {
+            
+            System.out.println("Menssagem: " + e.getMessage());
+            System.out.println("Causa original: " + e.getCause());
+        }
+
+    }
+
+    public static void abrirArquivo(String caminho) {
+
+        try {
+            if (caminho == null) {
+                throw new NullPointerException("caminho nulo");
+            }
+
+            throw new FileNotFoundException("Arquivo não encontrado");
+
+        } catch(FileNotFoundException e) {
+            NullPointerException npe = new NullPointerException("Erro ao processar arquivo");
+
+            npe.initCause(e);
+
+            throw npe;
+        }
     }
 
     public static void processarArquivos(String caminho) throws FileNotFoundException, IOException {
@@ -144,5 +173,8 @@ public class Erros {
         }
 
         System.out.println("arquivo encontrado com sucesso");
+    
+
+
     }
 }
