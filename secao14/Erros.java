@@ -120,24 +120,24 @@ public class Erros {
 
 
         // 5 - trhows em métodos
-
-        try {
-            processarArquivos("teste");
-        } catch (FileNotFoundException e) {
-            System.out.println("Erro: " + e.getMessage());
-        } catch (IOException e) {
-            System.out.println("Erro: " + e.getMessage());
-        }
         
 
         // 6 - Encadeamento de exceções
-
         try {
             abrirArquivo(null);
         } catch (Exception e) {
             
             System.out.println("Menssagem: " + e.getMessage());
             System.out.println("Causa original: " + e.getCause());
+        }
+
+        // 8 - Relançar exceções
+        try {
+            processarDados(null);
+        } catch (Exception e) {
+            System.out.println("outra coisa...");
+            System.out.println("erro: " + e.getStackTrace());
+
         }
 
     }
@@ -160,21 +160,17 @@ public class Erros {
         }
     }
 
-    public static void processarArquivos(String caminho) throws FileNotFoundException, IOException {
+    public static void processarDados(String dados) {
 
-        if (caminho == null || caminho.isEmpty()) {
-            throw new IOException("Caminho não encontrado");
+        try {
+            if(dados == null) {
+                throw new NullPointerException("os dados são nulos");
+            }
+        } catch (Exception e) {
+            
+            System.out.println("Tratamento.");
+
+            throw e;
         }
-
-        File arquivo = new File(caminho);
-
-        if (!arquivo.exists()) {
-            throw new FileNotFoundException("Arquivo não encontrado");
-        }
-
-        System.out.println("arquivo encontrado com sucesso");
-    
-
-
     }
 }
