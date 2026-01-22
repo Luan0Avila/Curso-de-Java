@@ -1,0 +1,5 @@
+Esse aqruivo 
+
+com texto
+
+Vai ser lido pelo JAVA
