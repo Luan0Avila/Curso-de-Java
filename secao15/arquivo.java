@@ -36,6 +36,32 @@ public class arquivo {
                 System.out.println("Erro ao ler arquivo: " + e.getMessage());
             }
             
-        
+        // 2 - Escrever em arquivos
+        try (FileWriter writer = new FileWriter(currentDir + "saida.txt")) {
+            
+            writer.write("Escrevendo em arquivo \n");
+            writer.write("Escrevendo em arquivo 2");
+
+        } catch (Exception e) {
+            System.out.println("Erro ao escrever arquivo: " + e.getMessage());        
+        }
+    
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(currentDir + "saida2.txt"))) {
+            
+            writer.write("Escrevendo em arquivo com BufferedWriter \n");
+            writer.newLine();
+            writer.write("Escrevendo em arquivo 2 com BufferedWriter");
+
+        } catch (Exception e) {
+            System.out.println("Erro ao escrever arquivo: " + e.getMessage());   
+        }
+
+                try (BufferedWriter writer = new BufferedWriter(new FileWriter(currentDir + "saida2.txt", true))) {
+            
+            writer.append("testando");
+
+        } catch (Exception e) {
+            System.out.println("Erro ao escrever arquivo: " + e.getMessage());   
+        }
     }
 }
