@@ -63,5 +63,20 @@ public class arquivo {
         } catch (Exception e) {
             System.out.println("Erro ao escrever arquivo: " + e.getMessage());   
         }
+    
+        // 3 - serializando objetos
+        Pessoa pessoa = new Pessoa("João", 30);
+
+        System.out.println("Pessoa antes da serialização: " + pessoa.getNome() + ", " + pessoa.getIdade());
+
+        // Serialização
+        // arquivos serializados terminam com .ser
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(currentDir + "pessoa.ser"))) {
+            oos.writeObject(pessoa);
+            System.out.println("objeto serializado com sucesso.");
+        } catch (Exception e) {
+            System.out.println("Erro ao serializar objeto: " + e.getMessage());
+        }
+
     }
 }
