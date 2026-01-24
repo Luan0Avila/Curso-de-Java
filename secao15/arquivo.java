@@ -71,12 +71,25 @@ public class arquivo {
 
         // Serialização
         // arquivos serializados terminam com .ser
+        // Serializar = Output
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(currentDir + "pessoa.ser"))) {
+            
             oos.writeObject(pessoa);
             System.out.println("objeto serializado com sucesso.");
+        
         } catch (Exception e) {
             System.out.println("Erro ao serializar objeto: " + e.getMessage());
         }
 
+        // Desserialização
+        // Desserializar = Input
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(currentDir + "pessoa.ser"))) {
+            
+            Pessoa pessoaDesserializada = (Pessoa) ois.readObject();
+            System.out.println("Pessoa desserializada: " + pessoaDesserializada.getNome() + ", " + pessoaDesserializada.getIdade());
+        
+        } catch (Exception e) {
+            System.out.println("Erro ao desserializar objeto: " + e.getMessage());
+        }
     }
 }
