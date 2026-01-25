@@ -91,5 +91,24 @@ public class arquivo {
         } catch (Exception e) {
             System.out.println("Erro ao desserializar objeto: " + e.getMessage());
         }
+
+        // 4 - Manipulando binarios
+        try (FileInputStream fis = new FileInputStream(currentDir + "bolo.jpg");
+            FileOutputStream fos = new FileOutputStream(currentDir + "bolo_copia.jpg")) {
+            
+
+
+            int byteData;
+
+            while ((byteData = fis.read()) != -1) {
+                fos.write(byteData);
+                
+            }
+
+            System.out.println("Arquivo copiado com sucesso!");
+
+        } catch (Exception e) {
+            System.out.println("Erro ao manipular arquivo binario: " + e.getMessage());
+        }
     }
 }
