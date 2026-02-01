@@ -5,7 +5,7 @@ public class Aluno {
     private String nome;
     private double notaFinal;
 
-    public void Aluno(String nome, double notaFinal) {
+    public Aluno(String nome, double notaFinal) {
         this.nome = nome;
         this.notaFinal = notaFinal;
     }
