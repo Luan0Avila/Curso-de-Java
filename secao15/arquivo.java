@@ -2,6 +2,12 @@ package secao15;
 
 import java.io.*;
 
+import javax.imageio.ImageIO;
+
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
+
 public class arquivo {
     public static void main(String[] args) {
         
@@ -110,5 +116,54 @@ public class arquivo {
         } catch (Exception e) {
             System.out.println("Erro ao manipular arquivo binario: " + e.getMessage());
         }
+
+        // 5 - manipulação de imagem
+
+        // bolo.jpg e colocar um texto no centro
+        
+        try {
+            BufferedImage imagem = ImageIO.read(new File(currentDir + "bolo.jpg"));
+
+            if (imagem == null) {
+                System.out.println("A imagem não foi carregada corretamente.");
+                return;
+            }
+
+            Graphics2D g2d = imagem.createGraphics();
+
+            g2d.setFont(new Font("Arial", Font.BOLD, 50));
+            FontMetrics fm = g2d.getFontMetrics();
+            String texto = "Texto no centro";
+
+            // centralizar o texto na imagem
+            int larguraTexto = fm.stringWidth(texto);
+            int alturaTexto = fm.getHeight();
+
+            //posicionamento
+            int x = (imagem.getWidth() - larguraTexto) / 2;
+            int y = (imagem.getHeight() - alturaTexto) / 2 + fm.getAscent();
+
+            // desenhar retangulo
+            g2d.setColor(Color.BLACK);
+            g2d.fillRect(x - 10, y - fm.getAscent(), larguraTexto + 20, alturaTexto);
+
+            // desenhar o texto em cima do retangulo
+            g2d.setColor(Color.RED);
+            g2d.drawString(texto, x, y);
+
+            // liberação de recursos
+            g2d.dispose();
+
+            // salvar a imagem
+            File outFile = new File(currentDir + "Bolo_com_texto.png");
+
+            ImageIO.write(imagem, "png", outFile);
+
+            System.out.println("Texto gerado com sucesso");
+
+        } catch (Exception e) {
+            System.out.println("Erro ao carregar imagem: " + e.getMessage());
+        }
+    
     }
 }
