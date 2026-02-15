@@ -38,6 +38,16 @@ public class Generics {
         imprimirArray(numeros);
         imprimirArray(bools);
         
+        System.out.println();
+
+        // 3 - bounded types
+        Comparador<Integer> comparadorInteiros = new Comparador<>();
+
+        System.out.println("maior numero entre 20 e 10 " + comparadorInteiros.obterMaior(20, 10));
+    
+            Comparador<Double> comparadorDoubles = new Comparador<>();
+
+        System.out.println("maior numero entre 20 e 10 " + comparadorDoubles.obterMaior(20.2, 10.10));
     }
 
     public static <T extends Comparable<T>> T obterMaior(T valor1, T valor2) {
