@@ -48,6 +48,32 @@ public class Generics {
             Comparador<Double> comparadorDoubles = new Comparador<>();
 
         System.out.println("maior numero entre 20 e 10 " + comparadorDoubles.obterMaior(20.2, 10.10));
+    
+        // 4 - wildcard
+        List<Integer> nums2 = List.of(1,2,3,4,5,6,7);
+        List<String> paList = List.of("teste","teste","etset");
+
+        // aceita qualquer tipo de lista
+        imprimirLista(paList);
+        imprimirLista(nums2);
+
+        // aceita apenas listas numericas
+        System.out.println(somarNumeros(nums2));
+    
+        // aqui não é aceito por ser uma lista de Strings, caso fosse
+        // double, int, ou um outro tipo numerico funcionaria
+        //System.out.println(somarNumeros(paList));
+
+        List<Integer> nums3 = new ArrayList<>();
+
+        adicionarNums(nums3);
+
+        System.out.println(nums3);
+
+        for (Integer number : nums3) {
+            System.out.println(number);
+        }
+
     }
 
     public static <T extends Comparable<T>> T obterMaior(T valor1, T valor2) {
@@ -57,6 +83,29 @@ public class Generics {
     public static<T> void imprimirArray(T[] array) {
         for(T elemento : array) {
             System.out.print(elemento + ", ");
+        }
+    }
+
+    public static void imprimirLista(List<?> lista) {
+        for (Object elemento : lista) {
+            System.out.println(elemento);
+        }
+    }
+
+    public static double somarNumeros(List<? extends Number> lista) {
+        double soma = 0;
+
+        for (Number number : lista) {
+            soma += number.doubleValue();
+        }
+
+        return soma;
+    }
+
+    // Aceita apenas numeros inteieros
+    public static void adicionarNums(List<? super Integer> lista) {
+        for(int i = 1; i <= 5; i++) {
+            lista.add(i);
         }
     }
 }
