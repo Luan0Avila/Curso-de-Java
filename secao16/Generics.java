@@ -74,6 +74,37 @@ public class Generics {
             System.out.println(number);
         }
 
+
+        // 5 - generics com collections
+        List<Integer> listaIntegers = new ArrayList<>();
+
+        listaIntegers.add(10);
+        listaIntegers.add(11);
+        listaIntegers.add(22);
+        // listaIntegers.add(22.1);
+
+        for (Integer nums : listaIntegers) {
+            System.out.println(nums);
+        }
+
+        Set<String> conjuntoDePal = new HashSet<>();
+
+        conjuntoDePal.add("Java");
+        // não é possivel obter 2 valores iguais com Set
+        conjuntoDePal.add("Java");
+        conjuntoDePal.add("Generic");
+        
+        System.out.println(conjuntoDePal);
+
+        Map<String, Integer> conjuntoMap = new HashMap<>();
+        
+        conjuntoMap.put("Luna", 0);
+        conjuntoMap.put("Luan", 21);
+        conjuntoMap.put("Lady", 21);
+    
+        for (Map.Entry<String, Integer> entrada : conjuntoMap.entrySet()) {
+            System.out.println(entrada.getKey() + " tem " + entrada.getValue() + " anos");
+        }
     }
 
     public static <T extends Comparable<T>> T obterMaior(T valor1, T valor2) {
