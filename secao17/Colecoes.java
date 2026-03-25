@@ -48,5 +48,39 @@ public class Colecoes {
 
         // As collections tem os mesmos métodos
         // mas nem todas, podem aplicá-los
+
+
+        // - 2 - Set
+        // HashSet - Reordena os elementos
+        Set<String> conjunto = new HashSet<>();
+
+        conjunto.add("Java");
+        conjunto.add("Python");
+        conjunto.add("PHP");
+        conjunto.add("Java");
+
+        System.out.println(conjunto);
+        System.out.println(conjunto.contains("PHP"));
+
+        //LinkedHashSet - Mantem a ordem dos elementos
+        Set<Integer>numero2 = new LinkedHashSet<>();
+
+        numero2.add(5);
+        numero2.add(11);
+        numero2.add(6);
+        numero2.add(510);
+
+        System.out.println(numero2);
+
+        // TreeSet - Reordena os elementos
+        Set<String> nomes = new TreeSet<>();
+
+        nomes.add("Luna");
+        nomes.add("Luan");
+        nomes.add("Lady");
+
+        System.out.println(nomes);
+
+        // o método get não está no Set
     }
 }
