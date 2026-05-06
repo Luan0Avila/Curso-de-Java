@@ -80,7 +80,53 @@ public class Colecoes {
         nomes.add("Lady");
 
         System.out.println(nomes);
-
         // o método get não está no Set
+
+
+        // 3 - map
+
+        // Hashmap
+
+        Map<String, Integer> idadeMap = new HashMap<>();
+
+        idadeMap.put("Luna", 9);
+        idadeMap.put("Luan", 21);
+        idadeMap.put("Lady", 21);
+        
+        System.out.println(idadeMap);
+        
+        // map com chave já existente atualiza o valor
+        idadeMap.put("Luan", 22);
+        System.out.println(idadeMap);
+
+        System.out.println("Idade da Luna: " + idadeMap.get("Luna"));
+
+        idadeMap.remove("Luan");
+
+        System.out.println(idadeMap.containsKey("Luna"));
+        System.out.println(idadeMap.containsValue(11));
+
+        System.out.println(idadeMap.entrySet());
+
+        // LinkedHasMap
+        Map<String, String> capitalMap = new LinkedHashMap<>();
+
+        capitalMap.put("Brasil", "Brasilia");
+        capitalMap.put("Argentina", "Buneos Aires");
+        capitalMap.put("França", "Paris");
+
+        System.out.println(capitalMap.entrySet());
+
+        System.out.println(capitalMap.containsKey("Brasil"));
+
+        // TreeMap - reordena os itens
+
+        Map<String, Double> prodPrecoMap = new TreeMap<>();
+
+        prodPrecoMap.put("Maçã", 3.50);
+        prodPrecoMap.put("Pera", 5.00);
+        prodPrecoMap.put("Leite", 9.10);
+
+        System.out.println(prodPrecoMap);
     }
 }
