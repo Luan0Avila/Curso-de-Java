@@ -128,5 +128,38 @@ public class Colecoes {
         prodPrecoMap.put("Leite", 9.10);
 
         System.out.println(prodPrecoMap);
+
+        // 4 - Iterando
+
+        //for-each
+        for(String nome : nomes) {
+            System.out.println(nome);
+        }
+
+        // iterator
+        Iterator<String> nomesIterator = nomes.iterator();
+
+        // remover um elemento
+        while ((nomesIterator.hasNext())) {
+            
+            String nome = nomesIterator.next();
+
+            if (nome.equals("Luan")) {
+                nomesIterator.remove();
+            }
+        }
+
+        System.out.println(nomes);
+
+        // ListIterator
+        ListIterator<String> listIteratorNomes = listaNomes.listIterator();
+
+        while (listIteratorNomes.hasNext()) {
+            System.out.println("Nome: " + listIteratorNomes.next());
+        }
+
+                while (listIteratorNomes.hasPrevious()) {
+            System.out.println("Nome: " + listIteratorNomes.previous());
+        }
     }
 }
