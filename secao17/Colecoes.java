@@ -161,5 +161,32 @@ public class Colecoes {
                 while (listIteratorNomes.hasPrevious()) {
             System.out.println("Nome: " + listIteratorNomes.previous());
         }
+
+        // 5 - Collections imutaveis
+
+        // criando lista imutavel
+        List<String> listaMutavel = new ArrayList<>();
+
+        listaMutavel.add("teste");
+        listaMutavel.add("teste2");
+    
+        List<String> listaImutavel = Collections.unmodifiableList(listaMutavel);
+
+        System.out.println(listaImutavel);
+
+        // Não podemos adicionar novos elementos
+        // listaImutavel.add("teste3");
+
+        List<String> listaImutavel2 = List.of("item1", "item2", "item3");
+
+        //listaImutavel2.add("item4");
+
+        System.out.println(listaImutavel2);
+
+        Set<Integer> listaImutavelSet = Set.of(1,2,3);
+
+        // listaImutavelSet.add(4);
+
+        System.out.println(listaImutavelSet);
     }
 }
