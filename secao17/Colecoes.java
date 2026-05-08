@@ -198,5 +198,42 @@ public class Colecoes {
 
         System.out.println(numeros);
         System.out.println(numerosFiltrados);
+
+        // 7 - busca
+
+        // for
+        int numeroParaEncontar = 4;
+        boolean encontrou = false;
+
+        for(Integer numero : numeros) {
+            if (numero == numeroParaEncontar) {
+                encontrou = true;
+            }
+        }
+
+        System.out.println(numeros);
+
+        System.out.println("Encontrou? " + encontrou);
+    
+        // contains
+        String nomeBuscado = "Luna";
+        boolean encontrou2 = nomes.contains(nomeBuscado);
+
+        System.out.println(nomes);
+        System.out.println("Encontrou o nome? " + encontrou2);
+
+        // findAny
+        Optional<Integer> qualquerNumero = numeros.stream().findAny();
+
+        System.out.println(qualquerNumero);
+
+        //findFirst
+        Optional<Integer> primeiroNumero = numeros.stream().findFirst();
+
+        System.out.println(primeiroNumero);
+
+        Optional<Integer> primerioPar = numeros.stream().filter(num -> num % 2 == 0).findFirst();
+
+        System.out.println(primerioPar);
     }
 }
