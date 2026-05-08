@@ -1,6 +1,8 @@
 package secao17;
 
 import java.util.*;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class Colecoes {
     public static void main(String[] args) {
@@ -188,5 +190,12 @@ public class Colecoes {
         // listaImutavelSet.add(4);
 
         System.out.println(listaImutavelSet);
+
+        // 6 - Filter
+
+        List<Integer> numerosFiltrados = numeros.stream().filter(numero -> numero > 3).collect(Collectors.toList());
+
+        System.out.println(numeros);
+        System.out.println(numerosFiltrados);
     }
 }
