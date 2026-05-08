@@ -193,7 +193,9 @@ public class Colecoes {
 
         // 6 - Filter
 
-        List<Integer> numerosFiltrados = numeros.stream().filter(numero -> numero > 3).collect(Collectors.toList());
+        List<Integer> numerosFiltrados = numeros.stream()
+                                                .filter(numero -> numero > 3)
+                                                .collect(Collectors.toList());
 
         System.out.println(numeros);
         System.out.println(numerosFiltrados);
