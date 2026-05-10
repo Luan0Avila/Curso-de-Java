@@ -318,5 +318,28 @@ public class Colecoes {
             System.out.println(pessoa);
         }
 
+        // 12 - uso avançado de streams
+
+        List<List<String>> listaDeListas = Arrays.asList(
+            Arrays.asList("Maçã","Morango"),
+            Arrays.asList("Banana","Mamão"),
+            Arrays.asList("Uva","Melão")
+        );
+    
+        List<String> listaUnica = listaDeListas.stream()
+                                            .flatMap(List::stream)
+                                            .collect(Collectors.toList());
+
+        System.out.println(listaUnica);
+
+        // pipeline
+        List<Integer> resultado = numeros.stream()
+                                            .filter(n -> n % 2 == 0) // filtro de pares
+                                            .map(n -> n * 5) // multiplicação
+                                            .sorted() // ordenação
+                                            .collect(Collectors.toList());
+
+        System.out.println(numeros);
+        System.out.println(resultado);
     }
 }
