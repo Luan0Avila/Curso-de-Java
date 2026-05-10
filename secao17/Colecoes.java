@@ -291,5 +291,32 @@ public class Colecoes {
     
         System.out.println(frase);
 
+
+        // 11 - ordenação com comparator
+
+        List<Pessoa> pessoas = new ArrayList<>();
+
+        pessoas.add(new Pessoa("Luna", 0));
+        pessoas.add(new Pessoa("Luan", 21));
+        pessoas.add(new Pessoa("Lady", 21));
+        pessoas.add(new Pessoa("João", 5));
+        pessoas.add(new Pessoa("Maria", 24));
+        pessoas.add(new Pessoa("Luiz", 7));
+
+        // ordenar pelo nome
+        pessoas.sort(Comparator.comparing(Pessoa::getNome));
+
+        for(Pessoa pessoa : pessoas) {
+            System.out.println(pessoa);
+        }
+
+        // ordebar pelo nome e idade
+        pessoas.sort(Comparator.comparing(Pessoa::getNome)
+                                .thenComparing(Pessoa::getIdade));
+
+        for(Pessoa pessoa : pessoas) {
+            System.out.println(pessoa);
+        }
+
     }
 }
