@@ -251,5 +251,32 @@ public class Colecoes {
                                             .collect(Collectors.toList());
     
         System.out.println(nomesMaiusculos);
-                                        }
+    
+        // 9 - modificação
+
+        // adiciona novo el
+        numeros.add(50);
+
+        System.out.println(numeros);
+
+        // remove elementos pelo valor
+        numeros.remove(Integer.valueOf(3));
+
+        System.out.println(numeros);
+
+        // alterar todos os elementos
+        numeros.replaceAll(numero -> numero * 3);
+
+        System.out.println(numeros);
+
+        numeros.add(201);
+        numeros.add(205);
+        numeros.add(208);
+
+        System.out.println(numeros);
+        //remoção baseada em condição
+        numeros.removeIf(numero -> numero > 200);
+
+        System.out.println(numeros);
+    }
 }
