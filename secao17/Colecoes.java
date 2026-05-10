@@ -235,5 +235,21 @@ public class Colecoes {
         Optional<Integer> primerioPar = numeros.stream().filter(num -> num % 2 == 0).findFirst();
 
         System.out.println(primerioPar);
-    }
+
+        // 8 - Map
+
+        // modificam a collection
+        List<Integer> quadrados = numeros.stream()
+                                            .map(n -> n*n)
+                                            .collect(Collectors.toList());
+
+        System.out.println(numeros);
+        System.out.println(quadrados);
+
+        List<String> nomesMaiusculos = nomes.stream()
+                                            .map(String::toUpperCase)
+                                            .collect(Collectors.toList());
+    
+        System.out.println(nomesMaiusculos);
+                                        }
 }
