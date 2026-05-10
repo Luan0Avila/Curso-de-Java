@@ -278,5 +278,18 @@ public class Colecoes {
         numeros.removeIf(numero -> numero > 200);
 
         System.out.println(numeros);
+
+        // 10 - reduce
+
+        int soma = numeros.stream()
+                            .reduce(0, (acumulador, numero) -> acumulador + numero);
+
+        System.out.println(soma);
+    
+        String frase = nomes.stream()
+                            .reduce("", (concatenador, nome) -> concatenador + " " + nome);
+    
+        System.out.println(frase);
+
     }
 }
