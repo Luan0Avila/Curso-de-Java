@@ -112,11 +112,25 @@ public class Regex {
             System.out.println("Encontrado: " + matcher.group());
         }
 
+        // 3 - grupos e captura
+        regex = "(\\d{2})-(\\d{2})-(\\d{4})"; // (D)-(MM)-(AAAA)
+        texto = "A data de hoje é 13-05-2026 e a data de ontem foi 12-05-2026";
 
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(texto);
 
+        while (matcher.find()) {
+            System.out.println("Dia: " + matcher.group(1));
+            System.out.println("Mês: " + matcher.group(2));
+            System.out.println("Ano: " + matcher.group(3));
+            System.out.println("Todos: " + matcher.group(0)); // 0 = todos os grupos
+        }
 
+        // Backreference para substituição
+        // $1 = grupo 1, $2 = grupo 2 ...
+        String textoSubstituido = texto.replaceAll("(\\d{2})-(\\d{2})-(\\d{4})", "$3/$2/$1");
 
-
+        System.out.println("Texto após substituição: " + textoSubstituido);
 
     }
 }
