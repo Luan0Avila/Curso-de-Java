@@ -61,5 +61,62 @@ public class Regex {
             System.out.println("'" + matcher.group() + "'");
         }
 
+        // 2 - ancoras e fronteiras
+
+        // ^ no inicio da string
+        regex = "^c";
+        texto = "carro casa cadeira";
+
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(texto);
+
+        System.out.println("Correspondencia para ^c");
+        while (matcher.find()) {
+            System.out.println("Encontrado: " + matcher.group());
+        }
+
+        
+        // $ no fim da string
+        regex = "a$";
+        texto = "carro casa cadeira";
+
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(texto);
+
+        System.out.println("Correspondencia para a$");
+        while (matcher.find()) {
+            System.out.println("Encontrado: " + matcher.group());
+        }
+
+        // fronteira \b -> apenas o que está entre os \b
+        regex = "\\bpalavra\\b";
+        texto = "palavra compalavra palavras";
+
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(texto);
+
+        System.out.println("Correspondencia para \\bpalavra\\b");
+        while (matcher.find()) {
+            System.out.println("Encontrado: " + matcher.group());
+        }
+
+        // fronteira \B -> string com fronteira com o texto a ser procurado
+        regex = "\\Bpalavra";
+        texto = "palavra compalavra palavras";
+
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(texto);
+
+        System.out.println("Correspondencia para \\Bpalavra");
+        while (matcher.find()) {
+            System.out.println("Encontrado: " + matcher.group());
+        }
+
+
+
+
+
+
+
     }
 }
