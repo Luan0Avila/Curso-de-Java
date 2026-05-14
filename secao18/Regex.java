@@ -132,5 +132,64 @@ public class Regex {
 
         System.out.println("Texto após substituição: " + textoSubstituido);
 
+        // 4 - avançando em pattern e matcher
+
+        // correspondencia parcial
+        regex = "\\d{3}";
+        texto = "123ABC456";
+
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(texto);
+    
+        System.out.println("Correspondencias parciais lookinAt");
+        if (matcher.lookingAt()) {
+            System.out.println("Encontrado: " + matcher.group());
+        }
+
+        // contando grupos com groupCount
+        // alem de contar os grupos, a regex precisa estar no texto alvo
+        regex = "(\\d{3})-(\\d{3})-(\\d{3})";
+        texto = "123-456-712";
+    
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(texto);
+    
+        System.out.println("Contando grupos");
+
+        if (matcher.matches()) {
+            System.out.println("Total de grupos encontrados: " + matcher.groupCount());
+
+            for(int i = 0; i <= matcher.groupCount(); i++) {
+                System.out.println("Grupo " + i + " tem o valor de " + matcher.group(i));
+            }
+        }
+
+        // start e end para obter posição das correspondencias na string
+        regex = "\\d{3}";
+        texto = "O código é 123 e o segundo código é 456";
+
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(texto);
+    
+        System.out.println("Posição das correspondencias");
+        while (matcher.find()) {
+            
+            // qaundo eu tiver uma ocorrencia, o start é onde começa e o end termina
+            System.out.println("Encontrado: " + matcher.group() + ", começa em " + matcher.start() + " e termina em " + matcher.end());
+        }
+
+        // quote para tratar caracteres literais
+        String literalRegex = Pattern.quote("1+1=2");
+        texto = "A equação é 1+1=2 é o resultado";
+
+        pattern = Pattern.compile(literalRegex);
+        matcher = pattern.matcher(texto);
+
+        System.out.println("Caracteres literais");
+
+        if (matcher.find()) {
+            System.out.println("Encontrado: " + matcher.group());
+            System.out.println(matcher.start() + " - " + matcher.end());
+        }
     }
 }
