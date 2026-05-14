@@ -191,5 +191,31 @@ public class Regex {
             System.out.println("Encontrado: " + matcher.group());
             System.out.println(matcher.start() + " - " + matcher.end());
         }
+
+        // 5 - expressões avançadas
+
+        // lookahead positivo -> DO QUE A GENTE SINALIZOU PARA TRAS
+        String regexLookAhead = "\\d+(?=\\$)";
+        texto = "Preços: 100$ 200$ 300$ 400$";
+
+        pattern = Pattern.compile(regexLookAhead);
+        matcher = pattern.matcher(texto);
+
+        System.out.println("LookAhead positivo");
+        while (matcher.find()) {
+            System.out.println("Encontrou: " + matcher.group());
+        }
+
+        // lookbehind positivo -> PARA FRENTE DO QUE A GENTE DEFINIU
+        String regexLookBehind = "(?<=\\$)\\d+";
+        texto = "Preços: $100 $200 $300 $400";
+
+        pattern = Pattern.compile(regexLookBehind);
+        matcher = pattern.matcher(texto);
+
+        System.out.println("LookBehind positivo");
+        while (matcher.find()) {
+            System.out.println("Encontrou: " + matcher.group());
+        }
     }
 }
