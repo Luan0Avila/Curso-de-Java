@@ -271,6 +271,30 @@ public class Regex {
                 System.out.println("Hora inválida: " + hora);
             }
         }
+
+        // 7 - flags
+        // CASE_INSENSITIVE - q vai ignorar maiusculas e minusculas
+        regex = "java";
+        texto = "Java é muito bom. É legal aprender JAVA e JaVa não é tão difícil.";
+
+        pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+        matcher = pattern.matcher(texto);
+
+        while (matcher.find()) {
+            System.out.println("Encontrado: " + matcher.group());
+        }
+
+        // Flag MULTILINE (correspondencia por linha)
+        regex = "^\\d+";
+        texto = "123 este é o meu texto\nQue pula linhas\n4321 termina aqui.";
+
+        pattern = Pattern.compile(regex, Pattern.MULTILINE);
+        matcher = pattern.matcher(texto);
+
+        while(matcher.find()) {
+            System.out.println("ENcontrado: " + matcher.group());
+        }
+
         
     }   
 
