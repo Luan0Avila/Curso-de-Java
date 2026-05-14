@@ -217,5 +217,32 @@ public class Regex {
         while (matcher.find()) {
             System.out.println("Encontrou: " + matcher.group());
         }
+
+        // lookahead negativo
+        // que vai encontrar palavras sem ponto final
+        String regexLookAheadNegativo = "\\b\\w+\\b(?!\\.)";
+        texto = "Está é uma frase. E está é outra";
+
+        pattern = Pattern.compile(regexLookAheadNegativo);
+        matcher = pattern.matcher(texto);
+    
+        System.out.println("LookAhead negativo");
+        while (matcher.find()) {
+            System.out.println("Encontrou: " + matcher.group());
+        }
+
+        // lookbehin negativo
+        // Todas as palvaras que não são precedidas por #
+
+        String regexLookBehindNegativo = "(?<!#)\\w+";
+        texto = "#java #javascript #php pythom";
+
+        pattern = Pattern.compile(regexLookBehindNegativo);
+        matcher = pattern.matcher(texto);
+    
+        System.out.println("LookBehind negativo");
+        while (matcher.find()) {
+            System.out.println("Encontrou: " + matcher.group());
+        }
     }
 }
