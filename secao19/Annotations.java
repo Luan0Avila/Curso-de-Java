@@ -1,5 +1,7 @@
 package secao19;
 
+import java.lang.reflect.Field;
+
 public class Annotations {
 
     public static void main(String[] args) {
@@ -38,7 +40,47 @@ public class Annotations {
             }
         }
 
+        // 3 - annotation para validar campos
+        User user = new User("","teste@email.com");
+        validarCampos(user);
 
+        User user2 = new User("","");
+        validarCampos(user2);
+        
+
+    }
+
+
+    // função para validar campos anotados
+    public static void validarCampos(Object objeto) throws IllegalArgumentException {
+
+        // Pegar a classe, pegar os campos, verificar se eles tem annotation
+
+        Class<?> classe = objeto.getClass();
+
+        for(Field campo : classe.getDeclaredFields()) {
+
+            if(campo.isAnnotationPresent(NotEmpty.class)) {
+
+                // saber o valor de message de cada campo
+                NotEmpty anotacao = campo.getAnnotation(NotEmpty.class);
+
+                // ativar a acessibilidade do campo privado
+                campo.setAccessible(true);
+
+                try {
+                    Object valor = campo.get(objeto);
+
+                    // validar o campo
+                    if(valor == null || valor.toString().isEmpty()) {
+                        System.out.println(anotacao.message());
+                    }
+
+                } catch (Exception e) {
+                    System.out.println("Erro: " + e.getMessage());
+                }
+            }
+        }
     }
 
 
