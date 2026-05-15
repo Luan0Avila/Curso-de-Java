@@ -81,6 +81,17 @@ public class Annotations {
                 }
             }
         }
+
+        // 4 - annotation com processador
+
+        Servico servico = new Servico();
+
+        try {
+            
+            LogProcessor.processarLogs(servico);
+        } catch (Exception e) {
+            System.out.println("Erro: " + e.getMessage());
+        }
     }
 
 
