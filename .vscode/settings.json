@@ -1,0 +1,16 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/mnt/jogos/javafx-sdk-26.0.1/lib/javafx-swt.jar",
+        "/mnt/jogos/javafx-sdk-26.0.1/lib/javafx.base.jar",
+        "/mnt/jogos/javafx-sdk-26.0.1/lib/javafx.controls.jar",
+        "/mnt/jogos/javafx-sdk-26.0.1/lib/javafx.fxml.jar",
+        "/mnt/jogos/javafx-sdk-26.0.1/lib/javafx.graphics.jar",
+        "/mnt/jogos/javafx-sdk-26.0.1/lib/javafx.media.jar",
+        "/mnt/jogos/javafx-sdk-26.0.1/lib/javafx.swing.jar",
+        "/mnt/jogos/javafx-sdk-26.0.1/lib/javafx.web.jar",
+        "/mnt/jogos/javafx-sdk-26.0.1/lib/jdk.jsobject.jar",
+        "/mnt/jogos/javafx-sdk-26.0.1/lib/jfx.incubator.input.jar",
+        "/mnt/jogos/javafx-sdk-26.0.1/lib/jfx.incubator.richtext.jar"
+    ]
+}
