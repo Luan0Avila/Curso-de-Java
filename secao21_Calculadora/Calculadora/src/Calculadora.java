@@ -84,6 +84,13 @@ public class Calculadora extends Application{
                 display.setText("");
                 break;
             case "=":
+                if (!currentInput.isEmpty() && !operator.isEmpty()) {
+                    double currentValue = Double.parseDouble(currentInput);
+                    double result = calculate(previousValue, currentValue, operator);
+                    display.setText(String.valueOf(result));
+                    currentInput = String.valueOf(result);
+                    operator = "";
+                }
                 break;
             case "+": case "-": case "*": case "/":
                 if (!currentInput.isEmpty()) {
@@ -96,6 +103,23 @@ public class Calculadora extends Application{
                 currentInput += value;
                 display.setText(currentInput);
                 break;
+        }
+    }
+
+    // realizar o calculo
+    private double calculate(double a, double b, String op) {
+
+        switch (op) {
+            case "+":
+                return a + b;
+            case "-":
+                return a - b;
+            case "*":
+                return a * b;
+            case "/":
+                return a / b;
+            default:
+                return 0;
         }
     }
 
