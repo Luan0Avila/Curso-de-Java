@@ -29,8 +29,30 @@ public class Cronometro extends Application{
         // Display do tempo
         timeLabel.setId("timeLabel");
         root.getChildren().add(timeLabel);
+
+        // Layout dos botões
+        HBox hBox = new HBox();
+        hBox.setSpacing(10);
+
+        Button startButton = new Button("Inciar");
+        startButton.setMinSize(100, 50);
+        startButton.setId("startButton");
+
+        Button pauseButton = new Button("Pausar");
+        pauseButton.setMinSize(100, 50);
+        pauseButton.setId("pauseButton");
+
+        Button resetButton = new Button("Reiniciar");
+        resetButton.setMinSize(100, 50);
+        resetButton.setId("resetButton");
+
+        hBox.getChildren().addAll(startButton, pauseButton, resetButton);
+
+        root.getChildren().addAll(hBox);
+
+
         // Configurar a cena
-        Scene scene = new Scene(root, 300, 400);
+        Scene scene = new Scene(root, 400, 200);
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.show();
