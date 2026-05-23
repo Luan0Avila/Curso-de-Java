@@ -53,6 +53,7 @@ public class Calculadora extends Application{
             Button button = new Button(text);
             button.setMinSize(50, 50);
             // evento
+            button.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> handleButtonPress(text));
 
             grid.add(button, col, row);
 
@@ -71,6 +72,31 @@ public class Calculadora extends Application{
         primaryStage.setScene(scene);
         primaryStage.show();
 
+    }
+
+    // Lógica da calculadora
+    private void handleButtonPress(String value) {
+        switch (value) {
+            case "C":
+                currentInput = "";
+                operator = "";
+                previousValue = 0;
+                display.setText("");
+                break;
+            case "=":
+                break;
+            case "+": case "-": case "*": case "/":
+                if (!currentInput.isEmpty()) {
+                    operator = value;
+                    previousValue = Double.parseDouble(currentInput);
+                    currentInput = "";
+                }
+                break;
+            default:
+                currentInput += value;
+                display.setText(currentInput);
+                break;
+        }
     }
 
 
