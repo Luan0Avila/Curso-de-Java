@@ -5,13 +5,14 @@ import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.input.*;
+import javafx.util.Duration;
 import javafx.geometry.Insets;
 
 
 public class Cronometro extends Application{
 
     private Label timeLabel = new Label("00:00:00");
-    private int secondElapsed = 0;
+    private int secondsElapsed = 0;
     private Timeline timeline;
 
     
@@ -37,14 +38,17 @@ public class Cronometro extends Application{
         Button startButton = new Button("Inciar");
         startButton.setMinSize(100, 50);
         startButton.setId("startButton");
+        startButton.setOnAction(e -> startTimer());
 
         Button pauseButton = new Button("Pausar");
         pauseButton.setMinSize(100, 50);
         pauseButton.setId("pauseButton");
+        pauseButton.setOnAction(e -> pauseTimer());
 
         Button resetButton = new Button("Reiniciar");
         resetButton.setMinSize(100, 50);
         resetButton.setId("resetButton");
+        resetButton.setOnAction(e -> resetTimer());
 
         hBox.getChildren().addAll(startButton, pauseButton, resetButton);
 
@@ -59,6 +63,44 @@ public class Cronometro extends Application{
 
     }
 
+   // inicializar o temporizador
+    private void startTimer() {
+        if(timeline == null || timeline.getStatus() != Timeline.Status.RUNNING) {
+            timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> updateTimer()));
+            timeline.setCycleCount(Timeline.INDEFINITE);
+            timeline.play();
+        }
+    }
+
+    // pausar o tempo
+    private void pauseTimer() {
+        if(timeline != null) {
+            timeline.pause();
+        }
+    }
+
+    // zerar o tempo
+    private void resetTimer() {
+        if(timeline != null) {
+            timeline.stop();
+        }
+        secondsElapsed = 0;
+        updateTimerDisplay();
+    }
+
+    // atualizar o display
+    private void updateTimer() {
+        secondsElapsed++;
+        updateTimerDisplay();
+    }
+
+    private void updateTimerDisplay() {
+        int hours = secondsElapsed / 3600; // < 3600 = 0; > 3600 1; 7200 2
+        int minutes = (secondsElapsed % 3600) / 60;
+        int seconds = secondsElapsed % 60; // 1234:59:59
+
+        timeLabel.setText(String.format("%02d:%02d:%02d", hours, minutes, seconds));
+    }
 
     public static void main(String[] args) {
         launch(args);
