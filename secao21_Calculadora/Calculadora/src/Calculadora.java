@@ -9,7 +9,7 @@ import javafx.geometry.Insets;
 
 public class Calculadora extends Application{
 
-    private Label diplay = new Label("");
+    private Label display = new Label("");
     private String currentInput = "";
     private String operator = "";
     private double previousValue = 0;
@@ -25,6 +25,46 @@ public class Calculadora extends Application{
         root.setPadding(new Insets(20));
         root.setSpacing(10);
 
+        // Display
+        display.setId("display");
+        display.setMinSize(200, 50);
+        display.setMaxSize(200, 50);
+        display.setMaxWidth(Double.MAX_VALUE);
+        VBox.setVgrow(display, Priority.NEVER);
+        root.getChildren().add(display);
+
+        // Layout dos botões
+        GridPane grid = new GridPane();
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(10));
+
+        String[] buttons = {
+            "7", "8", "9", "/",
+            "4", "5", "6", "*",
+            "1", "2", "3", "-",
+            "0", "C", "=", "+" 
+        };
+        // 1, 2, 3
+        //1, 2, 3 (2 linha)
+        int row = 0;
+        int col = 0;
+        for(String text: buttons) {
+            Button button = new Button(text);
+            button.setMinSize(50, 50);
+            // evento
+
+            grid.add(button, col, row);
+
+            col++;
+            if (col > 3) {
+                col = 0;
+                row++;
+            }
+        }
+
+
+        root.getChildren().add(grid);
         // Configurar a cena
         Scene scene = new Scene(root, 300, 400);
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
